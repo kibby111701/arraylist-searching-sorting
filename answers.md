@@ -12,5 +12,20 @@
         4. Go to the middle of the remaining items, of which only banana remains. Since the list cannot be divided any further, blueberry is not in the list. 
       ii. Search accessed 11 items. Binary search technically only accessed 4.
       iii.  Search would access 1000 items, binary search would access 10.
-    
+
+--Sorting--
+    1. I used part of a deck of cards, and I noticed that selection sorting is very slow, insertion is moderately faster because it doesn't have to search through entire sections of the cards at a time, and bubble sorting is faster the closer to perfect the arrangement is. 
+    2. Selecton:
+        i. Roughly 45 comparisons
+        ii. Rougly 45 comparisons
+        iii. Roughly 45 comparisons for 10, 4950 for 100, and 499500 for 1000.
+       Insertion:
+        i. 9 comparisons
+        ii. 45 comparisons
+        iii. Roughly 30 comparisons for 10, so 300 for 100 and 3000 for 1000.
+       Bubble:
+        i. 9 comparisons
+        ii. Roughly 45 comparisons
+        iii. Roughly 30 comparisons, so 300 for 100 and 3000 for 1000.
+    3. Out of these sorting methods, I believe that the extra time taken to sort the elements would completely outweigh the benefits of the binary search, so a normal search would be better. 
     
