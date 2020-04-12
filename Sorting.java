@@ -18,8 +18,8 @@ public class Sorting{
 
 
         // selectionSort(fruits);
-        // insertionSort(fruits);
-        bubbleSort(fruits);
+        insertionSort(fruits);
+        // bubbleSort(fruits);
         System.out.println(fruits);
 
 
@@ -44,12 +44,13 @@ public class Sorting{
     public static void insertionSort(ArrayList <String> list){
         for (int i = 1; i < list.size(); i++){
             String current = list.get(i);
-            for (int j = i - 1; j >= 0; j--){
-                String swap = list.get(j);
-                if (current.compareTo(swap) < 0){
-                    list.set(j + 1, swap);
-                    list.set(j, current);
-                }
+            int j = i - 1;
+            String swap = list.get(j);
+            while (j >= 0 && current.compareTo(swap) < 0){
+                swap = list.get(j);
+                list.set(j + 1, swap);
+                list.set(j, current);
+                j -= 1;
             }
         }
     }
