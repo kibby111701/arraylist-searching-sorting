@@ -19,8 +19,8 @@ public class Searching{
 
         System.out.println(simpleSearch(fruits, "cherry"));
         System.out.println(simpleSearch(fruits, "blueberry"));
-        // System.out.println(binarySearch(fruits, "cherry"));
-        // System.out.println(binarySearch(fruits, "blueberry"));
+        System.out.println(binarySearch(fruits, "blueberry"));
+        System.out.println(binarySearch(fruits, "cherry"));
     }
     
     public static int simpleSearch(ArrayList <String> haystack, String needle){
@@ -33,26 +33,29 @@ public class Searching{
         return -1;
     }
 
-    // public static int binarySearch(ArrayList <String> haystack, String needle){
-    //     int i = haystack.size() / 2;
-    //     int firstSide = 0;
-    //     int lastSide = haystack.size() - 1;
+    public static int binarySearch(ArrayList <String> haystack, String needle){
+        int firstSide = 0;
+        int lastSide = haystack.size() - 1;
 
-    //     while (i > 0){  
-    //         if (haystack.get(i).compareTo(needle) == 0){
-    //             return i;
-    //         }
-    //         else if (haystack.get(i).compareTo(needle) < 0){
-    //             lastSide = i;
-    //         }
-    //         else if (haystack.get(i).compareTo(needle) > 0){
-    //             firstSide = i;
-    //         }
+        while (firstSide <= lastSide){  
+            int i = firstSide + (lastSide - firstSide)/2;
+            if (haystack.get(i).equals(needle)){
+                return i;
+            }
+            else if (haystack.get(i).compareTo(needle) > 0){
+                lastSide = i - 1;
+            }
+            else if (haystack.get(i).compareTo(needle) < 0){
+                firstSide = i + 1;
+            }
 
-    //         i = firstSide + ((lastSide - firstSide)/2);
-    //     }
 
-    //     return -1;
-    // }
+            if (firstSide == lastSide){
+                i = -1;
+            }
+        }
+
+        return -1;
+    }
 
 }
