@@ -18,7 +18,8 @@ public class Sorting{
 
 
         // selectionSort(fruits);
-        insertionSort(fruits);
+        // insertionSort(fruits);
+        bubbleSort(fruits);
         System.out.println(fruits);
 
 
@@ -49,6 +50,25 @@ public class Sorting{
                     list.set(j + 1, swap);
                     list.set(j, current);
                 }
+            }
+        }
+    }
+
+    public static void bubbleSort(ArrayList <String> list){
+        boolean done = false;
+        while (!done){
+            int swapCount = 0;
+            for (int i = 1; i < list.size(); i++){
+                String current = list.get(i);
+                String swap = list.get(i-1);
+                if (current.compareTo(swap) < 0){
+                    list.set(i, swap);
+                    list.set(i-1, current);
+                    swapCount += 1;
+                }
+            }
+            if (swapCount == 0){
+                done = true;
             }
         }
     }
